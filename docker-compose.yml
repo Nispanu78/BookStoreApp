@@ -6,7 +6,7 @@ services:
     command: python /code/manage.py runserver 0.0.0.0:8000
 
     environment:
-        - SECRET_KEY=ehsuv_!j0leim8$fg@@ly6jsx(kh1szf9cdavu+6&zh+5xd6*6
+        - SECRET_KEY=
         - DEBUG=1
     volumes:
       - .:/code
