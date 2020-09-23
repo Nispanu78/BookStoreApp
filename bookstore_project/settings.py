@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
-    'books.apps.BooksConfig'
+    'books.apps.BooksConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
@@ -154,9 +155,5 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
-# SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_HOST_USER = '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' # this is exactly the value 'apikey'
-# EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
+STRIPE_TEST_PUBLISHABLE_KEY=os.environ.get('STRIPE_TEST_PUBLISHABLE_KEY')
+STRIPE_TEST_SECRET_KEY=os.environ.get('STRIPE_TEST_SECRET_KEY')

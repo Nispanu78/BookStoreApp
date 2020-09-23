@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block title %}Orders{% endblock title %}
+
+{% block content %}
+<h1>Orders page</h1>
+<p>Buy for $39.00</p>
+<form action="{% url 'charge' %}" method="post">
+    {% csrf_token %}
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_51HU7V9A3lPSgAZTaYgWnQOyjMzwe7KtXuJEMd80MGQdwQMc4DBCk1qt2T56oDPn8jOtk7aLzKmGCJ5dRYYMCWOAz00S8GqHgiK"
+        data-description="All Books"
+        data-amount="3900"
+        data-locale="auto">
+    </script>
+</form>
+{% endblock content %}
